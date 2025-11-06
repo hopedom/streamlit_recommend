@@ -8,16 +8,36 @@ ___
 
 - [배포된 streamlit](https://apprecommend-nmhn3yf5gy86no8fued8kc.streamlit.app/)
 
-🚀 모델 학습 결과 및 평가 metric 
+## 🚀 모델 학습 결과 및 평가 Metric
+
+### 1. 기본 모델 (최종 제출 모델)
+
+*이 모델의 가중치가 Streamlit 배포에 활용되었습니다.*
+
+| 지표 | 훈련/검증 결과 | 추천 지표 (@10) | 비고 |
+|:---|:---|:---|:---|
+| **Batch Size** | 2048 | 2048 | 안정적인 학습 조건 |
+| **Loss (Val)** | 0.577 (0.592) | N/A | 이진 분류 성능 |
+| **NDCG** | N/A | **0.654** | 추천 순위 정확도 |
+| **Hit Rate** | N/A | **0.625** | 추천 성공률 |
+
+### 2. 튜닝 시도 모델 (성능 하락)
+
+| 지표 | 훈련/검증 결과 | 추천 지표 (@10) | 비고 |
+|:---|:---|:---|:---|
+| **Batch Size** | 32 (불안정 조건 하) | 32 | **성능 하락 원인** |
+| **Val AUC** | 0.770 | N/A | 튜닝 목표 Metric (분류 성능) |
+| **NDCG** | N/A | 0.558 | **약 9.6%p 하락** |
+
+🚀 모델 학습 기록
 
 1. `batch_size` = 2048
-   - 현재 streamlit 배포는 이 모델로 저장된 가중치를 활용하였습니다. 
    - `binary_crossentropy`: 0.577 - `loss`: 0.577 - `val_binary_crossentropy`: 0.592 - `val_loss`: 0.592
    - `ndcg` :  0.654, `hitrate` :  0.625
 2. `batch_size` = 32 튜닝 후 best_model 기록
-   - `batch_size` 수정 후 `keras.tuner`를 활용하여 `임베딩 크기`, `Dropout 비율` 그리고 `학습률`에 대한 파라미터 튜닝을 수행하였습니다.
-   - 튜닝 시 `metric`은 `AUC`를 활용하였고, 평가 지표인 `NDCG` 그리고 `hitrate`를 활용하여 비교 분석을 수행하였습니다. 
-   - 그 결과, 기존 모델의 성능 대비 약 9.6%p의 성능 하락을 보였습니다.
+   - `batch_size` 수정 후 `keras.tuner`를 활용하여 `임베딩 크기`, `Dropout 비율` 그리고 `학습률`에 대한 파라미터 튜닝을 수행
+   - 튜닝 시 `metric`은 `AUC`를 활용하였고, 평가 지표인 `NDCG` 그리고 `hitrate`를 활용하여 비교 분석을 수행
+   - 그 결과, 기존 모델의 성능 대비 약 9.6%p의 성능 하락을 보임
    - `val_AUC Score` = 0.770, `ndcg` :  0.558, `hitrate` :  0.572
 <img width="562" height="848" alt="image" src="https://github.com/user-attachments/assets/516a365b-5875-4739-927d-3714e7dd7480" />
 <img width="663" height="556" alt="image" src="https://github.com/user-attachments/assets/482e6c54-1cbc-4015-be5c-316c77236749" />

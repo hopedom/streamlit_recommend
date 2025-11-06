@@ -50,7 +50,7 @@ MarkupSafe
 matplotlib==3.10.6
 matplotlib-inline 
 mdurl 
-mkl-service==2.4.0
+mkl-service==2.6.0
 mkl_fft 
 mkl_random 
 ml_dtypes 

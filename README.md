@@ -1,21 +1,21 @@
 # 딥러닝 기반 추천시스템 구축 프로젝트
 ___
 
-📌 개요
+### 📌 개요
 
 본 프로젝트는 영화 데이터셋 `MovieLens 1M`을 활용하여 AutoInt+ (AutoInt MLP Model) 딥러닝 추천 시스템을 구축하고, 하이퍼파라미터 튜닝을 통해 모델의 성능을 최적화하는 과정을 담고 있습니다.   
 최종적으로 Streamlit을 사용하여 구현된 추천 시스템을 시각화하고 배포했습니다.
 
 - [배포된 streamlit](https://apprecommend-nmhn3yf5gy86no8fued8kc.streamlit.app/)
 
-📊 최종 성능 비교 테이블
+### 📊 최종 성능 비교 테이블
 
 | # | Batch Size | NDCG @10 | Hit Rate @10 | 비고|
 |:---|:---|:---:|:---:|:---|
 | 1 | $\mathbf{2048}$ | **0.654** | **0.625** | **(튜닝 전 기본 모델)** |
 | 2 | 32 | 0.557 | 0.572 | 성능 하락으로 제외 |
 
-🚀 모델 학습 기록
+### 🚀 모델 학습 기록
 
 1. `batch_size` = 2048
    - `binary_crossentropy`: 0.577 - `loss`: 0.577 - `val_binary_crossentropy`: 0.592 - `val_loss`: 0.592
@@ -29,7 +29,7 @@ ___
 <img width="663" height="556" alt="image" src="https://github.com/user-attachments/assets/482e6c54-1cbc-4015-be5c-316c77236749" />
 
 ___
-## 📂 저장소 구조
+### 📂 저장소 구조
 
 ```text
 streamlit_recommend (Repository Root)

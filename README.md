@@ -6,6 +6,7 @@ ___
 
 - 저장소 구조
 
+```text
 streamlit_recommend (Repository Root)
 │  autoint.py                         # AutoInt 모델 구현 코드
 │  autointp.py                        # AutoInt+ 모델 구현 코드 (streamlit 배포 버전)
@@ -27,3 +28,4 @@ streamlit_recommend (Repository Root)
 └─model
       autoInt_model_weights.weights.h5 # 가중치 저장 파일 (AutoInt 모델)
       autoIntMLP+_model_weights.h5     # 가중치 저장 파일 (AutoInt+ 모델)
+```

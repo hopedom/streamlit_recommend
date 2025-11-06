@@ -14,8 +14,8 @@ ___
    - 현재 streamlit 배포는 이 모델로 저장된 가중치를 활용하였습니다. 
    - `binary_crossentropy`: 0.577 - `loss`: 0.577 - `val_binary_crossentropy`: 0.592 - `val_loss`: 0.592
    - `ndcg` :  0.654, `hitrate` :  0.625
-3. `batch_size` = 32 튜닝 후 best_model 기록
-   - `batch_size` 수정 후 `임베딩 크기`, `Dropout 비율` 그리고 `학습률`에 대한 파라미터 튜닝을 수행하였습니다.
+2. `batch_size` = 32 튜닝 후 best_model 기록
+   - `batch_size` 수정 후 `keras.tuner`를 활용하여 `임베딩 크기`, `Dropout 비율` 그리고 `학습률`에 대한 파라미터 튜닝을 수행하였습니다.
    - 튜닝 시 `metric`은 `AUC`를 활용하였고, 평가 지표인 `NDCG` 그리고 `hitrate`를 활용하여 비교 분석을 수행하였습니다. 
    - 그 결과, 기존 모델의 성능 대비 약 9.6%p의 성능 하락을 보였습니다.
    - `val_AUC Score` = 0.770, `ndcg` :  0.558, `hitrate` :  0.572

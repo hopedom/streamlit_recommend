@@ -1,15 +1,32 @@
 # 딥러닝 기반 추천시스템 구축 프로젝트
 ___
 
+📌 개요
+본 프로젝트는 영화 데이터셋 `MovieLens 1M`을 활용하여 AutoInt+ (AutoInt MLP Model) 딥러닝 추천 시스템을 구축하고, 하이퍼파라미터 튜닝을 통해 모델의 성능을 최적화하는 과정을 담고 있습니다.   
+최종적으로 Streamlit을 사용하여 구현된 추천 시스템을 시각화하고 배포했습니다.
 
 - [배포된 streamlit](https://apprecommend-nmhn3yf5gy86no8fued8kc.streamlit.app/)
 
-- 저장소 구조
+🚀 모델 학습 결과 및 평가 metric 
+1. batch_size = 2048
+   - binary_crossentropy: 0.5770 - loss: 0.5770 - val_binary_crossentropy: 0.5921 - val_loss: 0.5921
+   - mymodel ndcg :  0.65402, mymodel hitrate :  0.62511
+2. batch_size = 32 튜닝 후 best_model 기록
+   - batch_size 수정 후 `임베딩 크기`, `Dropout 비율` 그리고 `학습률`에 대한 파라미터 튜닝을 수행하였습니다.
+   - 튜닝 시 metric은 AUC를 활용하였고, 평가 지표인 NDCG 그리고 hitrate를 활용하여 비교 분석을 수행하였습니다. 
+   - 그 결과, 기존 모델의 성능 대비 약 9.6%p의 성능 하락을 보였습니다.
+   - val_AUC Score = 0.770468, mymodel ndcg :  0.55787, mymodel hitrate :  0.572
+<img width="562" height="848" alt="image" src="https://github.com/user-attachments/assets/516a365b-5875-4739-927d-3714e7dd7480" />
+<img width="663" height="556" alt="image" src="https://github.com/user-attachments/assets/482e6c54-1cbc-4015-be5c-316c77236749" />
+
+___
+📂 저장소 구조
 
 ```text
 streamlit_recommend (Repository Root)
 │  autoint.py                         # AutoInt 모델 구현 코드
-│  autointp.py                        # AutoInt+ 모델 구현 코드 
+│  autointp.py                        # AutoInt+ 모델 구현 코드
+│  model_training.ipynb               # AutoInt+ 모델 학습 및 튜닝 코드 
 │  show_st.py                         # Streamlit 메인 실행 파일 (AutoInt 모델)
 │  show_st+.py                        # Streamlit 메인 실행 파일 (AutoInt+ 모델) *streamlit 배포 버전
 │  requirements.txt                   # 필수 패키지 목록 (최종 간소화된 버전)
@@ -29,13 +46,4 @@ streamlit_recommend (Repository Root)
       autoInt_model_weights.weights.h5 # 가중치 저장 파일 (AutoInt 모델)
       autoIntMLP+_model_weights.h5     # 가중치 저장 파일 (AutoInt+ 모델)
 ```
-
-- 학습기록
-1. batch_size = 2048
-   - binary_crossentropy: 0.5770 - loss: 0.5770 - val_binary_crossentropy: 0.5921 - val_loss: 0.5921
-   - mymodel ndcg :  0.65402, mymodel hitrate :  0.62511
-2. batch_size = 32 튜닝 후 best_model 기록
-   - val_AUC Score = 0.770468, mymodel ndcg :  0.55787, mymodel hitrate :  0.572
-<img width="562" height="848" alt="image" src="https://github.com/user-attachments/assets/516a365b-5875-4739-927d-3714e7dd7480" />
-<img width="663" height="556" alt="image" src="https://github.com/user-attachments/assets/482e6c54-1cbc-4015-be5c-316c77236749" />
 

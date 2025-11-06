@@ -10,15 +10,15 @@ ___
 
 🚀 모델 학습 결과 및 평가 metric 
 
-1. batch_size = 2048
+1. `batch_size` = 2048
    - 현재 streamlit 배포는 이 모델로 저장된 가중치를 활용하였습니다. 
-   - binary_crossentropy: 0.5770 - loss: 0.5770 - val_binary_crossentropy: 0.5921 - val_loss: 0.5921
-   - mymodel ndcg :  0.65402, mymodel hitrate :  0.62511
-3. batch_size = 32 튜닝 후 best_model 기록
-   - batch_size 수정 후 `임베딩 크기`, `Dropout 비율` 그리고 `학습률`에 대한 파라미터 튜닝을 수행하였습니다.
-   - 튜닝 시 metric은 AUC를 활용하였고, 평가 지표인 NDCG 그리고 hitrate를 활용하여 비교 분석을 수행하였습니다. 
+   - `binary_crossentropy`: 0.5770 - `loss`: 0.5770 - `val_binary_crossentropy`: 0.5921 - `val_loss`: 0.5921
+   - `ndcg` :  0.65402, `hitrate` :  0.62511
+3. `batch_size` = 32 튜닝 후 best_model 기록
+   - `batch_size` 수정 후 `임베딩 크기`, `Dropout 비율` 그리고 `학습률`에 대한 파라미터 튜닝을 수행하였습니다.
+   - 튜닝 시 `metric`은 `AUC`를 활용하였고, 평가 지표인 `NDCG` 그리고 `hitrate`를 활용하여 비교 분석을 수행하였습니다. 
    - 그 결과, 기존 모델의 성능 대비 약 9.6%p의 성능 하락을 보였습니다.
-   - val_AUC Score = 0.770468, mymodel ndcg :  0.55787, mymodel hitrate :  0.572
+   - `val_AUC Score` = 0.770468, `ndcg` :  0.55787, `hitrate` :  0.572
 <img width="562" height="848" alt="image" src="https://github.com/user-attachments/assets/516a365b-5875-4739-927d-3714e7dd7480" />
 <img width="663" height="556" alt="image" src="https://github.com/user-attachments/assets/482e6c54-1cbc-4015-be5c-316c77236749" />
 

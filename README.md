@@ -10,14 +10,13 @@ ___
 
 ## 🚀 모델 학습 결과 및 평가 Metric
 
-### 1. 기본 모델 (최종 제출 모델)
 
 | # | Batch Size | NDCG @10 | Hit Rate @10 | 비고|
 |:---|:---|:---:|:---:|:---|
 | 1 | $\mathbf{2048}$ | **0.654** | **0.625** | **(튜닝 전 기본 모델)** |
 | 2 | 32 | 0.557 | 0.572 | 성능 하락으로 제외 |
 
-🚀 모델 학습 기록
+## 🚀 모델 학습 기록
 
 1. `batch_size` = 2048
    - `binary_crossentropy`: 0.577 - `loss`: 0.577 - `val_binary_crossentropy`: 0.592 - `val_loss`: 0.592
@@ -31,7 +30,7 @@ ___
 <img width="663" height="556" alt="image" src="https://github.com/user-attachments/assets/482e6c54-1cbc-4015-be5c-316c77236749" />
 
 ___
-📂 저장소 구조
+## 📂 저장소 구조
 
 ```text
 streamlit_recommend (Repository Root)

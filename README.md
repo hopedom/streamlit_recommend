@@ -2,12 +2,14 @@
 ___
 
 📌 개요
+
 본 프로젝트는 영화 데이터셋 `MovieLens 1M`을 활용하여 AutoInt+ (AutoInt MLP Model) 딥러닝 추천 시스템을 구축하고, 하이퍼파라미터 튜닝을 통해 모델의 성능을 최적화하는 과정을 담고 있습니다.   
 최종적으로 Streamlit을 사용하여 구현된 추천 시스템을 시각화하고 배포했습니다.
 
 - [배포된 streamlit](https://apprecommend-nmhn3yf5gy86no8fued8kc.streamlit.app/)
 
 🚀 모델 학습 결과 및 평가 metric 
+
 1. batch_size = 2048
    - binary_crossentropy: 0.5770 - loss: 0.5770 - val_binary_crossentropy: 0.5921 - val_loss: 0.5921
    - mymodel ndcg :  0.65402, mymodel hitrate :  0.62511

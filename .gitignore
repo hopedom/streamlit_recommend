@@ -1,0 +1,4 @@
+my_tuning_dir/
+__pycache__/
+*.zip
+*.pyc

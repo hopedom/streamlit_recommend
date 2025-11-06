@@ -12,6 +12,3 @@ streamlit
 tensorboard==2.20.0
 tensorboard_data_server 
 tensorflow
-torch==2.5.1
-torchaudio==2.5.1
-torchvision==0.20.1

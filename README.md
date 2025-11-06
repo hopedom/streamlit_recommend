@@ -9,9 +9,9 @@ ___
 ```text
 streamlit_recommend (Repository Root)
 │  autoint.py                         # AutoInt 모델 구현 코드
-│  autointp.py                        # AutoInt+ 모델 구현 코드 (streamlit 배포 버전)
+│  autointp.py                        # AutoInt+ 모델 구현 코드 
 │  show_st.py                         # Streamlit 메인 실행 파일 (AutoInt 모델)
-│  show_st+.py                        # Streamlit 메인 실행 파일 (AutoInt+ 모델)
+│  show_st+.py                        # Streamlit 메인 실행 파일 (AutoInt+ 모델) *streamlit 배포 버전
 │  requirements.txt                   # 필수 패키지 목록 (최종 간소화된 버전)
 │  README.md                          # 저장소 설명 파일
 │

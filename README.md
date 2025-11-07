@@ -13,6 +13,7 @@
 |:---|:---|:---:|:---:|:---|
 | 1 | $\mathbf{2048}$ | **0.654** | **0.625** | **(튜닝 전 기본 모델)** |
 | 2 | 32 | 0.557 | 0.572 | 성능 하락으로 제외 |
+| 3 | 2048 | 0.557 | 0.574 | 성능 하락으로 제외 |
 
 ### 🚀 모델 학습 기록
 
@@ -26,6 +27,10 @@
    - `val_AUC Score` = 0.770, `ndcg` :  0.558, `hitrate` :  0.572
 <img width="562" height="848" alt="image" src="https://github.com/user-attachments/assets/516a365b-5875-4739-927d-3714e7dd7480" />
 <img width="663" height="556" alt="image" src="https://github.com/user-attachments/assets/482e6c54-1cbc-4015-be5c-316c77236749" />
+
+3. `batch_size` = 2048 튜닝 후 best_model 기록
+<img width="558" height="843" alt="image" src="https://github.com/user-attachments/assets/73a73de8-378a-490b-928c-6178072a19c8" />
+<img width="654" height="546" alt="image" src="https://github.com/user-attachments/assets/f5d21c55-f444-4b56-83ce-eac981416011" />
 
 ___
 ### 📂 저장소 구조
